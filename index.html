@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183d31">
+  <meta name="description" content="Balance dietética: productos naturales, catálogo orientativo, promos compartidas y recetas sencillas. Consultá stock y vigencia por Instagram.">
+  <title>Balance dietética — Elegí bien, sentite bien</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #183d31;
+      --forest-deep: #102a22;
+      --leaf: #496b52;
+      --sage: #dce6d9;
+      --cream: #faf8ef;
+      --paper: #fffdf7;
+      --citrus: #e8e26b;
+      --ink: #1d3027;
+      --muted: #637167;
+      --line: rgba(24, 61, 49, .18);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "DM Sans", "Avenir Next", Avenir, ui-sans-serif, system-ui, sans-serif;
+      --page: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(var(--page), calc(100% - 56px)); margin-inline: auto; }
+    .eyebrow { margin: 0 0 18px; font-size: 11px; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; display: inline-block; width: 24px; height: 1px; margin: 0 10px 4px 0; background: currentColor; }
+
+    .site-header { position: relative; z-index: 5; background: var(--cream); }
+    .nav { min-height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand img { width: 68px; height: 68px; object-fit: contain; mix-blend-mode: multiply; }
+    .brand-name { color: var(--forest); font-size: 18px; font-weight: 700; letter-spacing: .15em; line-height: 1; text-transform: uppercase; }
+    .brand-name small { display: block; margin-top: 7px; color: var(--muted); font-size: 9px; font-weight: 500; letter-spacing: .22em; }
+    .nav-links { display: flex; align-items: center; gap: clamp(12px, 2vw, 26px); }
+    .nav-links a { color: var(--forest); font-size: 12px; font-weight: 600; letter-spacing: .11em; text-decoration: none; text-transform: uppercase; }
+    .nav-links a:hover { text-decoration: underline; text-underline-offset: 5px; }
+    .nav-links .nav-cta { border: 1px solid var(--forest); padding: 12px 16px; }
+    .menu-toggle { display: none; border: 1px solid var(--forest); background: transparent; color: var(--forest); padding: 10px 12px; font: inherit; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+
+    .hero { overflow: hidden; position: relative; min-height: 610px; background: var(--forest-deep); color: var(--cream); }
+    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(16,42,34,.98) 0%, rgba(16,42,34,.94) 39%, rgba(16,42,34,.45) 70%, rgba(16,42,34,.1) 100%); z-index: 1; }
+    .hero-photo { position: absolute; inset: 0 0 0 39%; width: 61%; height: 100%; object-fit: cover; object-position: center; opacity: .88; }
+    .hero .wrap { position: relative; z-index: 2; min-height: 610px; display: flex; align-items: center; }
+    .hero-copy { width: min(610px, 58%); padding: 72px 0 82px; }
+    .hero .eyebrow { color: var(--citrus); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 650px; margin-bottom: 22px; font-family: var(--serif); font-size: clamp(50px, 7vw, 88px); font-weight: 400; letter-spacing: -.035em; line-height: .98; }
+    h1 em { color: var(--citrus); font-style: italic; }
+    .hero-copy > p:not(.eyebrow) { max-width: 440px; margin-bottom: 30px; color: rgba(250,248,239,.82); font-size: 17px; line-height: 1.7; }
+    .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 12px; padding: 0 18px; border: 1px solid transparent; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-decoration: none; text-transform: uppercase; transition: background .2s ease, color .2s ease; }
+    .button-primary { background: var(--citrus); color: var(--forest-deep); }
+    .button-primary:hover { background: #f0edaa; }
+    .button-ghost { border-color: rgba(250,248,239,.65); color: var(--cream); }
+    .button-ghost:hover { background: var(--cream); color: var(--forest); }
+    .hero-note { position: absolute; z-index: 2; right: max(28px, calc((100vw - var(--page)) / 2)); bottom: 34px; display: flex; align-items: center; gap: 12px; color: rgba(250,248,239,.8); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+    .hero-note::before { content: ""; width: 34px; height: 1px; background: var(--citrus); }
+
+    .intro { padding: 104px 0 96px; }
+    .intro-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 9vw; align-items: start; }
+    .intro .eyebrow { color: var(--leaf); }
+    h2 { margin-bottom: 20px; color: var(--forest); font-family: var(--serif); font-size: clamp(36px, 4.3vw, 58px); font-weight: 400; letter-spacing: -.025em; line-height: 1.06; }
+    .intro-copy { max-width: 590px; padding-top: 25px; }
+    .intro-copy p { color: #46564b; font-size: 18px; line-height: 1.7; }
+    .inline-link { display: inline-flex; align-items: center; gap: 9px; margin-top: 12px; color: var(--forest); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
+    .inline-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+    .inline-link span { font-size: 18px; }
+
+    .selection { padding: 96px 0 110px; background: #e8ede2; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 42px; }
+    .section-head .eyebrow { color: var(--leaf); }
+    .section-head h2 { max-width: 620px; margin-bottom: 0; }
+    .section-head > p { max-width: 300px; margin: 0 0 5px; color: #59665d; font-size: 14px; line-height: 1.65; }
+    .tiles { display: grid; grid-template-columns: 1.12fr .88fr 1fr; gap: 18px; }
+    .tile { position: relative; min-height: 390px; overflow: hidden; background: var(--forest); color: white; }
+    .tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
+    .tile:hover img { transform: scale(1.035); }
+    .tile::after { content: ""; position: absolute; inset: 30% 0 0; background: linear-gradient(0deg, rgba(16,42,34,.9), rgba(16,42,34,0)); }
+    .tile-label { position: absolute; z-index: 1; right: 24px; bottom: 24px; left: 24px; }
+    .tile-label span { display: block; margin-bottom: 10px; color: var(--citrus); font-size: 10px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+    .tile-label h3 { margin: 0; font-family: var(--serif); font-size: 30px; font-weight: 400; }
+
+    .reviews { padding: 105px 0 112px; background: var(--cream); }
+    .reviews-head { margin-bottom: 42px; text-align: center; }
+    .reviews-head .eyebrow { color: var(--leaf); }
+    .reviews-head h2 { margin-bottom: 12px; }
+    .reviews-head p { margin: 0; color: var(--muted); font-size: 15px; }
+    .review-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .review { min-height: 235px; padding: 32px; border-top: 1px solid var(--forest); background: var(--paper); }
+    .quote-mark { margin-bottom: 14px; color: var(--leaf); font-family: var(--serif); font-size: 50px; line-height: .6; }
+    .review blockquote { max-width: 540px; margin: 0 0 24px; color: var(--forest); font-family: var(--serif); font-size: clamp(21px, 2vw, 27px); line-height: 1.28; }
+    .review cite { color: var(--muted); font-size: 11px; font-style: normal; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .review-source { display: block; margin-top: 5px; color: #79847b; font-size: 11px; }
+
+    .promo-ribbon { background: var(--citrus); color: var(--forest-deep); }
+    .promo-inner { min-height: 74px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .promo-copy { display: flex; align-items: center; gap: 16px; }
+    .promo-copy strong { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; }
+    .promo-copy span { font-family: var(--serif); font-size: 19px; }
+    .promo-link { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
+    .promo-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+    .offers { padding: 78px 0 88px; background: var(--forest); color: var(--cream); }
+    .offers-head { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 30px; }
+    .offers-head .eyebrow { color: var(--citrus); }
+    .offers-head h2 { margin-bottom: 0; color: var(--cream); }
+    .offers-head > p { max-width: 410px; margin: 0 0 5px; color: rgba(250,248,239,.74); font-size: 13px; line-height: 1.6; }
+    .offer-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .offer-card { min-height: 220px; display: flex; flex-direction: column; padding: 22px; background: rgba(255,255,255,.07); border-top: 1px solid rgba(250,248,239,.5); }
+    .offer-age { margin-bottom: 20px; color: var(--citrus); font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .offer-card h3 { margin-bottom: 10px; color: var(--cream); font-family: var(--serif); font-size: 23px; font-weight: 400; }
+    .offer-card p { margin-bottom: 16px; color: rgba(250,248,239,.75); font-size: 12px; line-height: 1.55; }
+    .offer-card a { margin-top: auto; color: var(--citrus); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
+    .offer-card a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    .catalog { padding: 100px 0 104px; background: var(--cream); }
+    .catalog-head { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 34px; }
+    .catalog-head .eyebrow, .recipes-head .eyebrow { color: var(--leaf); }
+    .catalog-head h2 { max-width: 620px; margin-bottom: 0; }
+    .catalog-note { max-width: 330px; margin: 0 0 4px; color: var(--muted); font-size: 14px; line-height: 1.65; }
+    .catalog-tools { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin-bottom: 28px; }
+    .catalog-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-chip { border: 1px solid var(--line); background: transparent; color: var(--forest); padding: 9px 13px; font: inherit; font-size: 11px; font-weight: 600; letter-spacing: .07em; cursor: pointer; }
+    .filter-chip[aria-pressed="true"], .filter-chip:hover { border-color: var(--forest); background: var(--forest); color: var(--cream); }
+    .catalog-search { width: min(260px, 100%); min-height: 40px; border: 1px solid var(--line); border-radius: 0; background: var(--paper); color: var(--ink); padding: 0 12px; font: inherit; font-size: 13px; }
+    .product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .product-card { min-height: 220px; display: flex; flex-direction: column; padding: 24px; border: 1px solid var(--line); background: var(--paper); }
+    .product-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+    .product-icon { display: grid; width: 48px; height: 48px; place-items: center; background: #e8ede2; font-size: 24px; }
+    .product-label { color: var(--leaf); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .product-card h3 { margin: 20px 0 8px; color: var(--forest); font-family: var(--serif); font-size: 25px; font-weight: 400; }
+    .product-card p { margin: 0 0 18px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .product-bottom { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: auto; }
+    .product-category { color: #758078; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
+    .product-ask { color: var(--forest); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
+    .product-ask:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .catalog-empty { grid-column: 1 / -1; padding: 30px; color: var(--muted); text-align: center; }
+    .catalog-admin { margin-top: 34px; border-top: 1px solid var(--line); padding-top: 22px; }
+    .admin-toggle { border: 1px solid var(--forest); background: transparent; color: var(--forest); padding: 11px 15px; font: inherit; font-size: 10px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; cursor: pointer; }
+    .admin-toggle:hover { background: var(--forest); color: var(--cream); }
+    .admin-panel { display: none; margin-top: 18px; padding: 24px; background: #e8ede2; }
+    .admin-panel.open { display: block; }
+    .admin-panel > p { max-width: 640px; color: #526256; font-size: 12px; line-height: 1.6; }
+    .product-form { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) auto; gap: 9px; align-items: end; }
+    .form-field label { display: block; margin-bottom: 6px; color: var(--forest); font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .form-field input, .form-field select { width: 100%; min-height: 40px; border: 1px solid var(--line); border-radius: 0; background: var(--paper); color: var(--ink); padding: 0 10px; font: inherit; font-size: 12px; }
+    .admin-submit { min-height: 40px; border: 0; background: var(--forest); color: var(--cream); padding: 0 14px; font: inherit; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+    .admin-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
+    .admin-item { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--paper); padding: 7px 9px; color: var(--forest); font-size: 11px; }
+    .admin-item button { border: 0; background: transparent; color: var(--forest); padding: 2px; font: inherit; cursor: pointer; }
+    .admin-item button:hover { text-decoration: underline; }
+    .admin-reset { margin-top: 14px; border: 0; background: transparent; color: #65746a; padding: 4px 0; font: inherit; font-size: 10px; text-decoration: underline; cursor: pointer; }
+
+    .recipes { padding: 100px 0 108px; background: #e8ede2; }
+    .recipes-head { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 38px; }
+    .recipes-head h2 { margin-bottom: 0; }
+    .recipes-head > p { max-width: 350px; margin: 0 0 4px; color: #59665d; font-size: 14px; line-height: 1.65; }
+    .recipe-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .recipe-card { padding: 28px; background: var(--paper); border-top: 1px solid var(--forest); }
+    .recipe-number { display: block; margin-bottom: 26px; color: var(--leaf); font-size: 10px; font-weight: 700; letter-spacing: .15em; }
+    .recipe-card h3 { margin-bottom: 10px; color: var(--forest); font-family: var(--serif); font-size: 28px; font-weight: 400; }
+    .recipe-card > p { min-height: 45px; margin-bottom: 18px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .recipe-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+    .recipe-tag { border: 1px solid var(--line); background: transparent; color: var(--forest); padding: 6px 8px; font: inherit; font-size: 9px; letter-spacing: .06em; cursor: pointer; }
+    .recipe-tag:hover { background: var(--sage); }
+    .recipe-steps { border-top: 1px solid var(--line); padding-top: 15px; color: #526256; font-size: 12px; line-height: 1.65; }
+    .recipe-steps strong { color: var(--forest); }
+    .recipe-source { display: inline-block; margin-top: 12px; color: var(--leaf); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+    .recipe-source:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    .visit { padding: 94px 0 104px; background: var(--forest-deep); color: var(--cream); }
+    .visit-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8vw; align-items: center; }
+    .visit .eyebrow { color: var(--citrus); }
+    .visit h2 { color: var(--cream); }
+    .visit-copy > p:not(.eyebrow) { max-width: 420px; color: rgba(250,248,239,.73); font-size: 16px; line-height: 1.7; }
+    .visit .button { margin-top: 14px; }
+    .map-frame { height: 390px; border: 1px solid rgba(250,248,239,.24); background: #dce6d9; }
+    .map-frame iframe { width: 100%; height: 100%; border: 0; filter: saturate(.75); }
+
+    .footer { padding: 34px 0; background: var(--forest-deep); border-top: 1px solid rgba(250,248,239,.18); color: rgba(250,248,239,.7); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .footer-brand { color: var(--cream); font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .footer p { margin: 0; font-size: 11px; letter-spacing: .05em; }
+    .footer a { color: var(--citrus); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+    .to-top { position: fixed; right: 22px; bottom: 22px; z-index: 4; display: grid; width: 42px; height: 42px; place-items: center; border: 0; background: var(--leaf); color: var(--cream); font-size: 18px; text-decoration: none; opacity: 0; pointer-events: none; transition: opacity .2s ease; }
+    .to-top.visible { opacity: 1; pointer-events: auto; }
+    :focus-visible { outline: 2px solid #a8b745; outline-offset: 4px; }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(var(--page), calc(100% - 36px)); }
+      .nav { min-height: 78px; }
+      .brand img { width: 56px; height: 56px; }
+      .brand-name { font-size: 15px; }
+      .menu-toggle { display: block; }
+      .nav-links { position: absolute; top: 78px; right: 0; left: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 18px 18px; background: var(--cream); border-bottom: 1px solid var(--line); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 15px 4px; }
+      .nav-links .nav-cta { margin-top: 6px; padding: 13px 14px; text-align: center; }
+      .hero, .hero .wrap { min-height: 680px; }
+      .hero-photo { inset: 0; width: 100%; height: 100%; object-position: 56% center; }
+      .hero::before { background: linear-gradient(90deg, rgba(16,42,34,.93), rgba(16,42,34,.58)), linear-gradient(0deg, rgba(16,42,34,.36), transparent 55%); }
+      .hero-copy { width: 100%; padding: 60px 0 96px; }
+      h1 { max-width: 520px; font-size: clamp(49px, 13vw, 76px); }
+      .hero-copy > p:not(.eyebrow) { max-width: 410px; font-size: 16px; }
+      .hero-note { right: 18px; bottom: 22px; left: 18px; }
+      .intro { padding: 76px 0; }
+      .intro-grid, .visit-grid { grid-template-columns: 1fr; gap: 18px; }
+      .intro-copy { padding-top: 0; }
+      .section-head { display: block; margin-bottom: 28px; }
+      .section-head > p { margin-top: 18px; }
+      .selection, .reviews, .visit { padding: 76px 0; }
+      .tiles { grid-template-columns: 1fr; gap: 12px; }
+      .tile { min-height: 310px; }
+      .review-grid { grid-template-columns: 1fr; }
+      .review { min-height: auto; padding: 26px; }
+      .map-frame { height: 310px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .promo-inner, .promo-copy { align-items: flex-start; flex-direction: column; }
+      .promo-inner { justify-content: center; padding: 17px 0; gap: 10px; }
+      .promo-copy { gap: 6px; }
+      .promo-copy span { font-size: 17px; }
+      .catalog, .recipes, .offers { padding: 76px 0; }
+      .catalog-head, .recipes-head { display: block; }
+      .offers-head { display: block; }
+      .catalog-note, .recipes-head > p { margin-top: 18px; }
+      .offers-head > p { margin-top: 18px; }
+      .catalog-tools { align-items: stretch; flex-direction: column-reverse; }
+      .catalog-search { width: 100%; }
+      .product-grid, .recipe-grid { grid-template-columns: 1fr; }
+      .offer-grid { grid-template-columns: 1fr; }
+      .product-card { min-height: 190px; }
+      .product-form { grid-template-columns: 1fr 1fr; }
+      .admin-submit { grid-column: 1 / -1; }
+      .admin-panel { padding: 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Balance dietética, inicio">
+        <img src="logo-balance.png" alt="Logo de Balance dietética">
+        <span class="brand-name">Balance<small>dietética</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menú</button>
+      <nav class="nav-links" id="nav-links" aria-label="Navegación principal">
+        <a href="#propuesta">La tienda</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#promos">Promos</a>
+        <a href="#recetas">Recetas</a>
+        <a href="#resenas">Reseñas</a>
+        <a href="#visitanos">Ubicación</a>
+        <a class="nav-cta" href="https://www.instagram.com/balance.dietetica/" target="_blank" rel="noreferrer">Instagram ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1600&q=85" alt="Ensalada fresca con ingredientes coloridos" fetchpriority="high">
+      <div class="wrap">
+        <div class="hero-copy">
+          <p class="eyebrow">Balance dietética</p>
+          <h1 id="hero-title">Elegí bien.<br><em>Sentite bien.</em></h1>
+          <p>Un espacio para descubrir opciones ricas y sumar pequeños momentos de bienestar a tu día.</p>
+          <div class="actions">
+            <a class="button button-primary" href="#visitanos">Visitá el local <span aria-hidden="true">↗</span></a>
+            <a class="button button-ghost" href="https://www.instagram.com/balance.dietetica/" target="_blank" rel="noreferrer">Seguir en Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-note">Un buen balance empieza con algo simple</div>
+    </section>
+
+    <aside class="promo-ribbon" aria-label="Promociones de Instagram">
+      <div class="wrap promo-inner">
+        <div class="promo-copy"><strong>Promos y novedades</strong><span>Consultá las historias destacadas para ver si hay promos vigentes.</span></div>
+        <div class="actions">
+          <a class="promo-link" href="https://www.instagram.com/stories/highlights/17978712537083858/" target="_blank" rel="noreferrer">“Promos” ↗</a>
+          <a class="promo-link" href="https://www.instagram.com/stories/highlights/18054551762765446/" target="_blank" rel="noreferrer">“Promociones” ↗</a>
+        </div>
+      </div>
+    </aside>
+
+    <section class="intro" id="propuesta">
+      <div class="wrap intro-grid">
+        <div>
+          <p class="eyebrow">Un lugar para elegir</p>
+          <h2>Todo lo que buscás, en un mismo lugar.</h2>
+        </div>
+        <div class="intro-copy">
+          <p>Encontrá una tienda ordenada y surtida, con opciones para acompañar tus comidas, tus pausas y tus antojos. Pasá por Balance y descubrí lo que tenemos para vos.</p>
+          <a class="inline-link" href="https://www.google.com/maps/place/Balance+diet%C3%A9tica/@-38.6942541,-62.3082735,18.25z/data=!4m6!3m5!1s0x95edbbab51686adb:0x3f66f16e434b9f03!8m2!3d-38.6938899!4d-62.3075592!16s%2Fg%2F11zgr11qt2" target="_blank" rel="noreferrer">Encontrá Balance en Google Maps <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="selection" aria-labelledby="selection-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Ideas para tu día</p>
+            <h2 id="selection-title">Pequeños cambios,<br>muchas posibilidades.</h2>
+          </div>
+          <p>Una selección visual para inspirarte. Consultanos por Instagram qué hay disponible hoy.</p>
+        </div>
+        <div class="tiles">
+          <article class="tile">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1000&q=85" alt="Ingredientes frescos para una comida cotidiana" loading="lazy">
+            <div class="tile-label"><span>01 · Para todos los días</span><h3>Comer rico, a tu manera</h3></div>
+          </article>
+          <article class="tile">
+            <img src="https://images.unsplash.com/photo-1505576399274-565b52d4ac71?auto=format&fit=crop&w=900&q=85" alt="Frutas frescas de distintos colores" loading="lazy">
+            <div class="tile-label"><span>02 · Una pausa rica</span><h3>Un mimo entre horas</h3></div>
+          </article>
+          <article class="tile">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85" alt="Bowl con vegetales y semillas" loading="lazy">
+            <div class="tile-label"><span>03 · Tu próximo descubrimiento</span><h3>Probá algo nuevo</h3></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalogo" aria-labelledby="catalog-title">
+      <div class="wrap">
+        <div class="catalog-head">
+          <div>
+            <p class="eyebrow">Selección Balance</p>
+            <h2 id="catalog-title">Un catálogo para<br>ir descubriendo.</h2>
+          </div>
+          <p class="catalog-note">La bio menciona frutos secos, semillas, hierbas y legumbres; en publicaciones recientes aparecen frutas congeladas y contenido sobre aceite de oliva. La disponibilidad puede cambiar.</p>
+        </div>
+        <div class="catalog-tools">
+          <div class="catalog-filters" role="group" aria-label="Filtrar catálogo">
+            <button class="filter-chip" type="button" data-filter="Todos" aria-pressed="true">Todo</button>
+            <button class="filter-chip" type="button" data-filter="Despensa" aria-pressed="false">Despensa</button>
+            <button class="filter-chip" type="button" data-filter="Frutos y semillas" aria-pressed="false">Frutos y semillas</button>
+            <button class="filter-chip" type="button" data-filter="Congelados" aria-pressed="false">Congelados</button>
+            <button class="filter-chip" type="button" data-filter="Desayunos y snacks" aria-pressed="false">Desayunos y snacks</button>
+            <button class="filter-chip" type="button" data-filter="Granel" aria-pressed="false">Granel</button>
+            <button class="filter-chip" type="button" data-filter="Picadas" aria-pressed="false">Picadas</button>
+          </div>
+          <input class="catalog-search" id="catalog-search" type="search" placeholder="Buscar en el catálogo" aria-label="Buscar productos">
+        </div>
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <div class="catalog-admin">
+          <button class="admin-toggle" id="admin-toggle" type="button" aria-expanded="false" aria-controls="admin-panel">Editar catálogo</button>
+          <div class="admin-panel" id="admin-panel">
+            <p>Agregá, editá o quitá productos desde este navegador. Los cambios se guardan localmente en este dispositivo y no se publican para otros visitantes.</p>
+            <form class="product-form" id="product-form">
+              <div class="form-field"><label for="product-name">Producto</label><input id="product-name" name="name" required maxlength="48" placeholder="Ej. Pasas de uva"></div>
+              <div class="form-field"><label for="product-category">Categoría</label><select id="product-category" name="category"><option>Despensa</option><option>Frutos y semillas</option><option>Congelados</option><option>Desayunos y snacks</option><option>Granel</option><option>Picadas</option></select></div>
+              <div class="form-field"><label for="product-description">Descripción breve</label><input id="product-description" name="description" required maxlength="100" placeholder="Variedades para tus recetas"></div>
+              <div class="form-field"><label for="product-icon">Ícono</label><select id="product-icon" name="icon"><option>🌿</option><option>🥜</option><option>🌻</option><option>🫘</option><option>🫐</option><option>🫒</option><option>🍇</option><option>🍓</option><option>🌰</option></select></div>
+              <button class="admin-submit" type="submit">Guardar producto</button>
+            </form>
+            <ul class="admin-list" id="admin-list" aria-label="Productos editables"></ul>
+            <button class="admin-reset" id="admin-reset" type="button">Restaurar catálogo inicial</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offers" id="promos" aria-labelledby="offers-title">
+      <div class="wrap">
+        <div class="offers-head">
+          <div>
+            <p class="eyebrow">Historias destacadas</p>
+            <h2 id="offers-title">Promos compartidas<br>por Balance.</h2>
+          </div>
+          <p>Estas historias tienen entre 8 y 15 semanas. Los precios son los que aparecían entonces; consultá por Instagram si siguen vigentes y si aplican al local.</p>
+        </div>
+        <div class="offer-grid">
+          <article class="offer-card">
+            <span class="offer-age">Historia · 15 semanas</span>
+            <h3>10% por reutilizar</h3>
+            <p>La historia anunciaba 10% OFF al llevar bolsa de tela y/o tupper. Vigencia actual a confirmar.</p>
+            <a href="https://www.instagram.com/stories/highlights/18054551762765446/" target="_blank" rel="noreferrer">Ver destacada ↗</a>
+          </article>
+          <article class="offer-card">
+            <span class="offer-age">Historia · 6 semanas</span>
+            <h3>Cuenta DNI</h3>
+            <p>La historia mencionaba 20% de ahorro de lunes a viernes, con tope semanal de $5.000 en comercios adheridos. Adhesión de Balance a confirmar.</p>
+            <a href="https://www.instagram.com/stories/highlights/17978712537083858/" target="_blank" rel="noreferrer">Ver destacada ↗</a>
+          </article>
+          <article class="offer-card">
+            <span class="offer-age">Historia · 9 semanas</span>
+            <h3>10% de descuento</h3>
+            <p>Una historia muestra “10% descuento” junto a legumbres a granel; no se leen claramente las condiciones ni los artículos incluidos.</p>
+            <a href="https://www.instagram.com/stories/highlights/18212230207345035/" target="_blank" rel="noreferrer">Ver destacada ↗</a>
+          </article>
+          <article class="offer-card">
+            <span class="offer-age">Historia · 8 semanas</span>
+            <h3>Combo proteico</h3>
+            <p>Limbus proteica + barrita Entrenuts proteica. Precio publicado entonces: $4.700; no confirmado como vigente.</p>
+            <a href="https://www.instagram.com/stories/highlights/18212230207345035/" target="_blank" rel="noreferrer">Ver destacada ↗</a>
+          </article>
+          <article class="offer-card">
+            <span class="offer-age">Historia · 8 semanas</span>
+            <h3>Combo picada</h3>
+            <p>Aceitunas verdes, pickles y mix cervecero de 400 g. Precio publicado entonces: $16.000; consultar disponibilidad.</p>
+            <a href="https://www.instagram.com/stories/highlights/18212230207345035/" target="_blank" rel="noreferrer">Ver destacada ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="recipes" id="recetas" aria-labelledby="recipes-title">
+      <div class="wrap">
+        <div class="recipes-head">
+          <div>
+            <p class="eyebrow">Recetas saludables y sencillas</p>
+            <h2 id="recipes-title">Ideas con productos<br>del catálogo.</h2>
+          </div>
+          <p>Preparaciones fáciles para inspirarte. Tocá un ingrediente para encontrarlo en el catálogo.</p>
+        </div>
+        <div class="recipe-grid">
+          <article class="recipe-card">
+            <span class="recipe-number">01 · PAN CASERO</span>
+            <h3>Pan de lentejas y semillas</h3>
+            <p>Una receta que Balance compartió en sus historias.</p>
+            <div class="recipe-tags"><button class="recipe-tag" data-product-search="Legumbres">Legumbres</button><button class="recipe-tag" data-product-search="Aceite de oliva">Aceite de oliva</button><button class="recipe-tag" data-product-search="Semillas">Semillas</button></div>
+            <div class="recipe-steps"><strong>Cómo hacerlo:</strong> remojá 500 g de lentejas unas 8 horas. Procesalas con ½ taza de agua, ¼ taza de aceite, 1 huevo, levadura y condimentos. Pasá la mezcla a un molde aceitado, cubrí con semillas y horneá a 180 °C durante 35–45 min.</div>
+            <a class="recipe-source" href="https://www.instagram.com/p/DXjkFGXjw3f/" target="_blank" rel="noreferrer">Receta original de @noe_carignano ↗</a>
+          </article>
+          <article class="recipe-card">
+            <span class="recipe-number">02 · DESAYUNO O MERIENDA</span>
+            <h3>Bowl de granola y fruta</h3>
+            <p>Un bowl rápido con las granolas proteicas que aparecen en historias.</p>
+            <div class="recipe-tags"><button class="recipe-tag" data-product-search="Granola proteica">Granola proteica</button><button class="recipe-tag" data-product-search="Frutas congeladas">Frutas congeladas</button><button class="recipe-tag" data-product-search="Miel">Miel</button></div>
+            <div class="recipe-steps"><strong>Cómo hacerlo:</strong> serví yogur natural en un bowl, agregá fruta congelada apenas descongelada y terminá con granola proteica. Si querés, sumá un hilo de miel.</div>
+            <a class="recipe-source" href="https://www.instagram.com/stories/highlights/17989933038019147/" target="_blank" rel="noreferrer">Granolas en historias de Balance ↗</a>
+          </article>
+          <article class="recipe-card">
+            <span class="recipe-number">03 · PARA ACOMPAÑAR</span>
+            <h3>Aderezo de oliva y hierbas</h3>
+            <p>Un toque aromático para ensaladas y vegetales.</p>
+            <div class="recipe-tags"><button class="recipe-tag" data-product-search="Aceite de oliva">Aceite de oliva</button><button class="recipe-tag" data-product-search="Hierbas">Hierbas</button><button class="recipe-tag" data-product-search="Semillas">Semillas</button></div>
+            <div class="recipe-steps"><strong>Cómo hacerlo:</strong> mezclá aceite de oliva con hierbas secas, unas gotas de limón y una pizca de sal. Sumá semillas justo antes de servir.</div>
+            <a class="recipe-source" href="https://www.instagram.com/balance.dietetica/p/DYpyyiwpmvs/" target="_blank" rel="noreferrer">Ver aceite de oliva en Instagram ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" id="resenas">
+      <div class="wrap">
+        <div class="reviews-head">
+          <p class="eyebrow">Lo que cuentan</p>
+          <h2>La experiencia Balance</h2>
+          <p>Reseñas compartidas por quienes ya visitaron la tienda.</p>
+        </div>
+        <div class="review-grid">
+          <article class="review">
+            <div class="quote-mark" aria-hidden="true">“</div>
+            <blockquote>Excelente negocio, todo muy ordenado y surtido. Probé sus productos, muy buenos y a buen precio.</blockquote>
+            <cite>Nazarena Mendez</cite>
+            <span class="review-source">Reseña en Google</span>
+          </article>
+          <article class="review">
+            <div class="quote-mark" aria-hidden="true">“</div>
+            <blockquote>Hermosa dietética, encontré lo que necesitaba 🤍</blockquote>
+            <cite>Luya Belen</cite>
+            <span class="review-source">Reseña en Google</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="visitanos">
+      <div class="wrap visit-grid">
+        <div class="visit-copy">
+          <p class="eyebrow">Te esperamos</p>
+          <h2>Encontranos<br>en el mapa.</h2>
+          <p>Consultá la ubicación y armá tu recorrido para pasar por Balance.</p>
+          <a class="button button-primary" href="https://www.google.com/maps/place/Balance+diet%C3%A9tica/@-38.6942541,-62.3082735,18.25z/data=!4m6!3m5!1s0x95edbbab51686adb:0x3f66f16e434b9f03!8m2!3d-38.6938899!4d-62.3075592!16s%2Fg%2F11zgr11qt2" target="_blank" rel="noreferrer">Cómo llegar <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="map-frame">
+          <iframe title="Mapa de ubicación de Balance dietética" src="https://maps.google.com/maps?q=-38.6938899%2C-62.3075592&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span class="footer-brand">Balance dietética</span>
+      <p>Seguí las novedades en <a href="https://www.instagram.com/balance.dietetica/" target="_blank" rel="noreferrer">@balance.dietetica ↗</a></p>
+      <p>© <span id="year"></span> Balance</p>
+    </div>
+  </footer>
+
+  <a class="to-top" href="#top" aria-label="Volver arriba">↑</a>
+  <script>
+    const initialProducts = [
+      { id: 'frutos-secos', name: 'Frutos secos', category: 'Frutos y semillas', description: 'Variedades para tus colaciones y recetas.', icon: '🥜' },
+      { id: 'semillas', name: 'Semillas', category: 'Frutos y semillas', description: 'Un toque crocante para bowls, ensaladas y más.', icon: '🌻' },
+      { id: 'hierbas', name: 'Hierbas', category: 'Despensa', description: 'Opciones para sumar aroma y sabor a tus platos.', icon: '🌿' },
+      { id: 'legumbres', name: 'Legumbres', category: 'Despensa', description: 'Un básico versátil para comidas de todos los días.', icon: '🫘' },
+      { id: 'frutas-congeladas', name: 'Frutas congeladas', category: 'Congelados', description: 'En un reel reciente muestran la variedad disponible.', icon: '🫐', sourceUrl: 'https://www.instagram.com/balance.dietetica/reel/DeHol2Qp8ER/' },
+      { id: 'aceite-de-oliva', name: 'Aceite de oliva', category: 'Despensa', description: 'La publicación destaca las variedades Arbequina y Arbosana.', icon: '🫒', sourceUrl: 'https://www.instagram.com/balance.dietetica/p/DYpyyiwpmvs/' },
+      { id: 'yerba', name: 'Yerba', category: 'Despensa', description: 'Mencionada entre los productos de la tienda.', icon: '🧉', sourceUrl: 'https://www.instagram.com/balance.dietetica/p/DYpuLU1pgYS/' },
+      { id: 'miel', name: 'Miel · 250 g y 500 g', category: 'Despensa', description: 'En Instagram aparecen frascos de 250 g y 500 g.', icon: '🍯', sourceUrl: 'https://www.instagram.com/balance.dietetica/p/DYqXJBdgz5B/' },
+      { id: 'cereales', name: 'Cereales', category: 'Desayunos y snacks', description: 'Mencionados entre los productos de la tienda.', icon: '🌾', sourceUrl: 'https://www.instagram.com/balance.dietetica/p/DYpuLU1pgYS/' },
+      { id: 'granola-proteica-rojos', name: 'Granola proteica · frutos rojos', category: 'Desayunos y snacks', description: 'Molé con whey protein y frutos rojos; vista en historias.', icon: '🥣', sourceUrl: 'https://www.instagram.com/stories/highlights/17989933038019147/' },
+      { id: 'granola-proteica-chocolate', name: 'Granola proteica · chocolate', category: 'Desayunos y snacks', description: 'Molé con whey protein y chocolate; vista en historias.', icon: '🍫', sourceUrl: 'https://www.instagram.com/stories/highlights/17989933038019147/' },
+      { id: 'cookies', name: 'Cookies · varios sabores', category: 'Desayunos y snacks', description: 'Publicación de Instagram muestra distintos sabores.', icon: '🍪', sourceUrl: 'https://www.instagram.com/balance.dietetica/p/DeCUHEHFIjb/' },
+      { id: 'granel', name: 'Productos a granel', category: 'Granel', description: 'El perfil tiene un destacado dedicado a la compra a granel.', icon: '🛍️', sourceUrl: 'https://www.instagram.com/stories/highlights/17887723644455225/' },
+      { id: 'barrita-proteica', name: 'Barritas proteicas · Entrenuts', category: 'Desayunos y snacks', description: 'Aparecen en un combo proteico de historias.', icon: '🍫', sourceUrl: 'https://www.instagram.com/stories/highlights/18212230207345035/' },
+      { id: 'proteina-limbus', name: 'Proteína · Limbus', category: 'Desayunos y snacks', description: 'Aparece en un combo proteico de historias.', icon: '💪', sourceUrl: 'https://www.instagram.com/stories/highlights/18212230207345035/' },
+      { id: 'aceitunas', name: 'Aceitunas verdes', category: 'Picadas', description: 'Incluidas en un combo picada publicado en historias.', icon: '🫒', sourceUrl: 'https://www.instagram.com/stories/highlights/18212230207345035/' },
+      { id: 'pickles', name: 'Pickles', category: 'Picadas', description: 'Incluidos en un combo picada publicado en historias.', icon: '🥒', sourceUrl: 'https://www.instagram.com/stories/highlights/18212230207345035/' },
+      { id: 'mix-cervecero', name: 'Mix cervecero · 400 g', category: 'Picadas', description: 'Incluido en un combo picada publicado en historias.', icon: '🥜', sourceUrl: 'https://www.instagram.com/stories/highlights/18212230207345035/' }
+    ];
+    const catalogKey = 'balance-dietetica-catalog-v2';
+    const catalogGrid = document.querySelector('#product-grid');
+    const catalogSearch = document.querySelector('#catalog-search');
+    const filterButtons = [...document.querySelectorAll('.filter-chip')];
+    let activeFilter = 'Todos';
+    let products = initialProducts;
+    try {
+      const savedProducts = JSON.parse(localStorage.getItem(catalogKey));
+      if (Array.isArray(savedProducts)) products = savedProducts;
+    } catch (error) {
+      products = initialProducts;
+    }
+
+    const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
+    const saveProducts = () => localStorage.setItem(catalogKey, JSON.stringify(products));
+    function renderCatalog() {
+      const query = catalogSearch.value.trim().toLocaleLowerCase('es');
+      const visibleProducts = products.filter(product => {
+        const matchesCategory = activeFilter === 'Todos' || product.category === activeFilter;
+        const searchable = `${product.name} ${product.description} ${product.category}`.toLocaleLowerCase('es');
+        return matchesCategory && searchable.includes(query);
+      });
+      catalogGrid.innerHTML = visibleProducts.length ? visibleProducts.map(product => `
+        <article class="product-card">
+          <div class="product-top"><span class="product-icon" aria-hidden="true">${escapeHtml(product.icon || '🌿')}</span><span class="product-label">En el catálogo</span></div>
+          <h3>${escapeHtml(product.name)}</h3>
+          <p>${escapeHtml(product.description)}</p>
+          <div class="product-bottom"><span class="product-category">${escapeHtml(product.category)}</span><a class="product-ask" href="${escapeHtml(product.sourceUrl || 'https://www.instagram.com/balance.dietetica/')}" target="_blank" rel="noreferrer">${product.sourceUrl ? 'Ver publicación ↗' : 'Consultar ↗'}</a></div>
+        </article>`).join('') : '<p class="catalog-empty">No encontramos productos con esa búsqueda.</p>';
+      renderAdminList();
+    }
+    function renderAdminList() {
+      const list = document.querySelector('#admin-list');
+      list.innerHTML = products.map(product => `<li class="admin-item"><span>${escapeHtml(product.name)}</span><button type="button" data-edit="${escapeHtml(product.id)}" aria-label="Editar ${escapeHtml(product.name)}">Editar</button><button type="button" data-delete="${escapeHtml(product.id)}" aria-label="Quitar ${escapeHtml(product.name)}">Quitar</button></li>`).join('');
+    }
+    document.querySelectorAll('.filter-chip').forEach(button => button.addEventListener('click', () => {
+      activeFilter = button.dataset.filter;
+      filterButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      renderCatalog();
+    }));
+    catalogSearch.addEventListener('input', renderCatalog);
+
+    const menuButton = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.nav-links');
+    menuButton.addEventListener('click', () => {
+      const open = menuButton.getAttribute('aria-expanded') !== 'true';
+      menuButton.setAttribute('aria-expanded', String(open));
+      navigation.classList.toggle('open', open);
+    });
+    navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      menuButton.setAttribute('aria-expanded', 'false');
+      navigation.classList.remove('open');
+    }));
+    document.querySelector('#year').textContent = new Date().getFullYear();
+    const topLink = document.querySelector('.to-top');
+    window.addEventListener('scroll', () => topLink.classList.toggle('visible', window.scrollY > 500), { passive: true });
+
+    const adminToggle = document.querySelector('#admin-toggle');
+    const adminPanel = document.querySelector('#admin-panel');
+    const productForm = document.querySelector('#product-form');
+    const formName = document.querySelector('#product-name');
+    const formCategory = document.querySelector('#product-category');
+    const formDescription = document.querySelector('#product-description');
+    const formIcon = document.querySelector('#product-icon');
+    adminToggle.addEventListener('click', () => {
+      const open = adminToggle.getAttribute('aria-expanded') !== 'true';
+      adminToggle.setAttribute('aria-expanded', String(open));
+      adminPanel.classList.toggle('open', open);
+    });
+    productForm.addEventListener('submit', event => {
+      event.preventDefault();
+      const editingId = productForm.dataset.editingId;
+      const existingItem = editingId ? products.find(product => product.id === editingId) : null;
+      const item = { ...(existingItem || {}), id: editingId || `custom-${Date.now()}`, name: formName.value.trim(), category: formCategory.value, description: formDescription.value.trim(), icon: formIcon.value };
+      if (editingId) products = products.map(product => product.id === editingId ? item : product);
+      else products = [...products, item];
+      saveProducts();
+      productForm.reset();
+      delete productForm.dataset.editingId;
+      adminToggle.textContent = 'Editar catálogo';
+      renderCatalog();
+    });
+    document.querySelector('#admin-list').addEventListener('click', event => {
+      const editId = event.target.dataset.edit;
+      const deleteId = event.target.dataset.delete;
+      if (editId) {
+        const product = products.find(item => item.id === editId);
+        if (!product) return;
+        formName.value = product.name;
+        formCategory.value = product.category;
+        formDescription.value = product.description;
+        formIcon.value = product.icon || '🌿';
+        productForm.dataset.editingId = product.id;
+        adminToggle.textContent = 'Editando producto';
+        formName.focus();
+      } else if (deleteId) {
+        products = products.filter(product => product.id !== deleteId);
+        saveProducts();
+        renderCatalog();
+      }
+    });
+    document.querySelector('#admin-reset').addEventListener('click', () => {
+      products = initialProducts.map(product => ({ ...product }));
+      localStorage.removeItem(catalogKey);
+      productForm.reset();
+      delete productForm.dataset.editingId;
+      adminToggle.textContent = 'Editar catálogo';
+      renderCatalog();
+    });
+    document.querySelectorAll('.recipe-tag').forEach(button => button.addEventListener('click', () => {
+      catalogSearch.value = button.dataset.productSearch;
+      activeFilter = 'Todos';
+      filterButtons.forEach(item => item.setAttribute('aria-pressed', String(item.dataset.filter === 'Todos')));
+      renderCatalog();
+      document.querySelector('#catalogo').scrollIntoView({ behavior: 'smooth' });
+    }));
+    renderCatalog();
+  </script>
+</body>
+</html>
